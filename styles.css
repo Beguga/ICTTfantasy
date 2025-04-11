@@ -1,0 +1,404 @@
+/* Базовые стили для body */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+/* Фон для главной страницы (меню) */
+body.menu-page {
+    background: url('images/background-menu.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Фон для страницы Info */
+body.info-page {
+    background: url('images/background-info.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Фон для страницы Fantasy */
+body.fantasy-page {
+    background: url('images/background-fantasy.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Контейнер для страницы Fantasy */
+.fantasy-container {
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: absolute; /* Добавляем позиционирование */
+    top: 10%; /* Смещаем по Y */
+    left: 20%; /* Смещаем по X */
+    transform: translateX(-50%); /* Центрируем по X относительно left */
+}
+
+.fantasy-container h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Стили для формы */
+#user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 450px;
+}
+
+#user-form label {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+#user-form input,
+#user-form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.1);
+    color: white; /* Цвет текста для input остаётся белым */
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 700;
+}
+
+#user-form select {
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1) url('images/arrow-down.png') no-repeat right 10px center;
+    background-size: 20px;
+    color: black; /* Переопределяем цвет текста для select */
+}
+
+/* Кнопка "Далее" как спрайт */
+.next-button {
+    width: 300px; /* Увеличиваем ширину */
+    height: 90px; /* Высота остаётся прежней */
+    background: url('images/button-sprite.png') no-repeat 0 0;
+    background-size: 225px 45px; /* Обновляем размер спрайта: ширина 250px, высота 100px (2 состояния) */
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+
+/* Стили для страницы Info */
+.info-container {
+    padding: 80px 40px 40px 40px;
+    color: white;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-arrow {
+    width: 40px;
+}
+
+.info-block {
+    margin-bottom: 20px;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+.info-header h2 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.arrow {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.arrow.active {
+    transform: rotate(90deg);
+}
+
+.info-content {
+    display: none;
+    padding: 20px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.info-content.active {
+    display: block;
+}
+
+.info-content h3.highlight {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.info-content p {
+    margin: 10px 0;
+}
+
+.info-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.info-content li {
+    margin-bottom: 5px;
+}
+
+/* Стили для главной страницы */
+.container {
+    text-align: center;
+}
+
+.logo {
+    width: 400px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-button {
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Фон для страницы Team Selection */
+body.team-selection-page {
+    background: url('images/background-team-selection.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Контейнер для страницы */
+.team-selection-container {
+    padding: 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: white;
+}
+
+.team-selection-container h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Основной контент: поле и список игроков */
+.team-selection-content {
+    display: flex;
+    gap: 20px;
+}
+
+/* Поле */
+.field {
+    flex: 1;
+    background: url('images/field.png') no-repeat center center;
+    background-size: contain;
+    height: 500px;
+    position: relative;
+}
+
+/* Секции для игроков */
+.goalkeepers, .defenders, .midfielders, .forwards {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+}
+
+.goalkeepers { top: 10%; }
+.defenders { top: 30%; }
+.midfielders { top: 50%; }
+.forwards { top: 70%; }
+
+/* Ячейки для игроков */
+.player-slot {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.player-slot.filled {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+/* Кнопка удаления игрока */
+.remove-player {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+/* Список игроков */
+.player-list {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 600px; /* Увеличили с 500px до 600px */
+    overflow-y: auto;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters select {
+    padding: 5px;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+}
+
+/* Заголовок столбцов */
+.player-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.player {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+
+.player:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.player span {
+    font-size: 1em;
+}
+
+/* Кнопка добавления игрока */
+.add-player {
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.add-player:disabled {
+    background: grey;
+    cursor: not-allowed;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 700;
+}
+
+.pagination button:disabled {
+    background: rgba(255, 255, 255, 0.05);
+    cursor: not-allowed;
+}
+
+/* Бюджет и кнопка "Сохранить" */
+.budget {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-button {
+
+
+    width: 300px; /* Увеличиваем ширину */
+    height: 90px; /* Высота остаётся прежней */
+    background: url('images/save-button.png') no-repeat center center;
+    background-size: 225px 45px; /* Обновляем размер спрайта: ширина 250px, высота 100px (2 состояния) */
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+}

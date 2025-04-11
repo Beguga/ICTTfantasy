@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info - ICTT League Fantasy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/neue-machina" rel="stylesheet">
+</head>
+<body class="info-page">
+    <div class="info-container">
+        <a href="index.html" class="back-button">
+            <img src="images/back-arrow.png" alt="Back" class="back-arrow">
+        </a>
+        <div class="info-block">
+            <div class="info-header" onclick="toggleInfo('fantasy-info')">
+                <h2>Что такое Fantasy?</h2>
+                <img src="images/arrow-right.png" alt="Arrow" class="arrow" id="fantasy-arrow">
+            </div>
+            <div class="info-content" id="fantasy-info">
+                <p>
+                    Участнику фэнтези-чемпионата предлагается  собрать команду из игроков всех команд, представленных в данном турнире исходя из заданного бюджета.
+
+Когда окончательный состав сформирован, участник его сохраняет, в дальнейшем в каждом туре будет возможность провести три трансфера (обмена уже выбранных игроков на новых), необходимость таких трансферов вызвана травмами выбранных игроков или же участием выбранных игроков в матчах, где их команда не является фаворитом.
+
+После того как состоялся матч реальных команд, участнику турнира начисляются зачетные баллы за выступление выбранных им игроков. Игрокам балы могут как начисляться за позитивные результативные действия, так и вычитаться за негативные действия. Всю картину по начисленным баллам участник турнира может наблюдать в своем профиле в fantasy. Исходя из набранных очков участник турнира располагается в турнирной таблице.
+                </p>
+            </div>
+        </div>
+        <div class="info-block">
+            <div class="info-header" onclick="toggleInfo('points-info')">
+                <h2>Как начисляются очки?</h2>
+                <img src="images/arrow-right.png" alt="Arrow" class="arrow" id="points-arrow">
+            </div>
+            <div class="info-content" id="points-info">
+                <p>Сыгранный матч: +1</p>
+                <h3 class="highlight">Голы:</h3>
+                <ul>
+                    <li>вратарь — 7 очков;</li>
+                    <li>защитник — 6 очков;</li>
+                    <li>полузащитник — 5 очков;</li>
+                    <li>нападающий — 4 очка;</li>
+                </ul>
+                <h3 class="highlight">Ассисты:</h3>
+                <p>3 очка для всех</p>
+                <h3 class="highlight">Сухарь:</h3>
+                <ul>
+                    <li>вратарь — 4 очка;</li>
+                    <li>защитник — 4 очка;</li>
+                    <li>полузащитник — 1 очко;</li>
+                </ul>
+                <p>Три сейва вратаря: +1</p>
+                <h3 class="highlight">2 пропущенных:</h3>
+                <ul>
+                    <li>вратарь — -1 очко;</li>
+                    <li>защитник — -1 очко;</li>
+                </ul>
+                <h3 class="highlight">КК:</h3>
+                <ul>
+                    <li>вратарь — -3 очка;</li>
+                    <li>защитник — -3 очка;</li>
+                    <li>полузащитник — -3 очка;</li>
+                    <li>нападающий — -3 очка;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Selection - ICTT League Fantasy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/neue-machina" rel="stylesheet">
+</head>
+<body class="team-selection-page">
+    <div class="team-selection-container">
+        <h2>Моя команда. Трансферы</h2>
+        <div class="team-selection-content">
+            <!-- Левая часть: поле с ячейками -->
+            <div class="field">
+                <div class="goalkeepers">
+                    <div class="player-slot" data-position="ВР"></div>
+                    <div class="player-slot" data-position="ВР"></div>
+                </div>
+                <div class="defenders">
+                    <div class="player-slot" data-position="ЗЩ"></div>
+                    <div class="player-slot" data-position="ЗЩ"></div>
+                    <div class="player-slot" data-position="ЗЩ"></div>
+                    <div class="player-slot" data-position="ЗЩ"></div>
+                    <div class="player-slot" data-position="ЗЩ"></div>
+                </div>
+                <div class="midfielders">
+                    <div class="player-slot" data-position="ПЗ"></div>
+                    <div class="player-slot" data-position="ПЗ"></div>
+                    <div class="player-slot" data-position="ПЗ"></div>
+                    <div class="player-slot" data-position="ПЗ"></div>
+                    <div class="player-slot" data-position="ПЗ"></div>
+                </div>
+                <div class="forwards">
+                    <div class="player-slot" data-position="НАП"></div>
+                    <div class="player-slot" data-position="НАП"></div>
+                    <div class="player-slot" data-position="НАП"></div>
+                </div>
+            </div>
+
+            <!-- Правая часть: список игроков -->
+            <div class="player-list">
+                <div class="filters">
+                    <select id="club-filter">
+                        <option value="all">Все клубы</option>
+                        <option value="Барселона">Барселона</option>
+                        <option value="ПСЖ">ПСЖ</option>
+                        <option value="Бавария">Бавария</option>
+                        <option value="Реал Мадрид">Реал Мадрид</option>
+                        <!-- Добавь больше клубов -->
+                    </select>
+                    <select id="position-filter">
+                        <option value="all">Все</option>
+                        <option value="ВР">Вратари</option>
+                        <option value="ЗЩ">Защитники</option>
+                        <option value="ПЗ">Полузащитники</option>
+                        <option value="НАП">Нападающие</option>
+                    </select>
+                    <select id="sort-filter">
+                        <option value="points-desc">Очки ↓</option>
+                        <option value="points-asc">Очки ↑</option>
+                        <option value="price-desc">Цена ↓</option>
+                        <option value="price-asc">Цена ↑</option>
+                    </select>
+                </div>
+                <div class="player-header">
+                    <span>Имя</span>
+                    <span>Поз</span>
+                    <span>Клуб</span>
+                    <span>Очки</span>
+                    <span>Цена</span>
+                    <span></span>
+                </div>
+                <div class="players">
+                    <!-- Игроки будут добавлены через JavaScript -->
+                </div>
+                <div class="pagination">
+                    <button id="prev-page" disabled>Назад</button>
+                    <span id="page-number">1</span>
+                    <button id="next-page">Вперёд</button>
+                </div>
+            </div>
+        </div>
+        <div class="budget">
+            <span>Бюджет: <span id="budget">100</span></span>
+            <button class="save-button">Сохранить</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
