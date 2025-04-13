@@ -8,8 +8,46 @@
     <link href="https://fonts.cdnfonts.com/css/neue-machina" rel="stylesheet">
 </head>
 <body class="team-selection-page">
+    <!-- Кнопка для таблицы лидеров -->
+<button id="leaderboard-button">Таблица лидеров</button>
+
+<!-- Модальное окно для таблицы лидеров -->
+<div id="leaderboard-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-leaderboard" class="close">&times;</span>
+        <h2>Таблица лидеров</h2>
+        <div id="leaderboard-content">
+            <h3>Общий счёт</h3>
+            <table id="overall-leaderboard">
+                <thead>
+                    <tr>
+                        <th>Место</th>
+                        <th>Никнейм</th>
+                        <th>Очки</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h3>За последний тур</h3>
+            <table id="last-tour-leaderboard">
+                <thead>
+                    <tr>
+                        <th>Место</th>
+                        <th>Никнейм</th>
+                        <th>Очки</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
     <div class="team-selection-container">
         <h2>Моя команда. Трансферы</h2>
+        <!-- Панель туров -->
+        <div class="tour-selection">
+            <div id="tour-buttons"></div>
+        </div>
         <div class="team-selection-content">
             <!-- Левая часть: поле с ячейками -->
             <div class="field">
@@ -43,10 +81,25 @@
                 <div class="filters">
                     <select id="club-filter">
                         <option value="all">Все клубы</option>
-                        <option value="Барселона">Барселона</option>
-                        <option value="ПСЖ">ПСЖ</option>
-                        <option value="Бавария">Бавария</option>
-                        <option value="Реал Мадрид">Реал Мадрид</option>
+                        <option value="Сайрос">Сайрос</option>
+                        <option value="Манреса">Манреса</option>   
+                        <option value="Ритховен">Ритховен</option>
+                        <option value="Уралан">Уралан</option>
+                        <option value="Мелитополь">Мелитополь</option>
+                        <option value="Кобресаль">Кобресаль</option>
+                        <option value="Тюмень">Тюмень</option>
+                        <option value="Атлетико Хоризонте">Атлетико Хоризонте</option>
+                        <option value="Гладиатор">Гладиатор</option>
+                        <option value="Флорида">Флорида</option>
+                        <option value="Металлург">Металлург</option>
+                        <option value="Лас Фьеро">Лас Фьеро</option>
+                        <option value="Капро">Капро</option>
+                        <option value="Фьорд">Фьорд</option>
+                        <option value="Джумейра">Джумейра</option>
+                        <option value="РБ Братислава">РБ Братислава</option>
+                        <option value="РБ Тотем">РБ Тотем</option>
+                        <option value="Сайрос">Сайрос</option>
+                        <option value="Колчестер">Колчестер</option>
                         <!-- Добавь больше клубов -->
                     </select>
                     <select id="position-filter">
@@ -87,5 +140,5 @@
         </div>
     </div>
     <script src="script.js"></script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92e93cca0ab5b025',t:'MTc0NDM2MTQzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
