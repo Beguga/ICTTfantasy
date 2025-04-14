@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Selection - ICTT League Fantasy</title>
@@ -9,39 +13,39 @@
 </head>
 <body class="team-selection-page">
     <!-- Кнопка для таблицы лидеров -->
-<button id="leaderboard-button">Таблица лидеров</button>
+    <button id="leaderboard-button">Таблица лидеров</button>
 
-<!-- Модальное окно для таблицы лидеров -->
-<div id="leaderboard-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-leaderboard" class="close">&times;</span>
-        <h2>Таблица лидеров</h2>
-        <div id="leaderboard-content">
-            <h3>Общий счёт</h3>
-            <table id="overall-leaderboard">
-                <thead>
-                    <tr>
-                        <th>Место</th>
-                        <th>Никнейм</th>
-                        <th>Очки</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <h3>За последний тур</h3>
-            <table id="last-tour-leaderboard">
-                <thead>
-                    <tr>
-                        <th>Место</th>
-                        <th>Никнейм</th>
-                        <th>Очки</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+    <!-- Модальное окно для таблицы лидеров -->
+    <div id="leaderboard-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-leaderboard" class="close">×</span>
+            <h2>Таблица лидеров</h2>
+            <div id="leaderboard-content">
+                <h3>Общий счёт</h3>
+                <table id="overall-leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Место</th>
+                            <th>Никнейм</th>
+                            <th>Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <h3>За последний тур</h3>
+                <table id="last-tour-leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Место</th>
+                            <th>Никнейм</th>
+                            <th>Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
     <div class="team-selection-container">
         <h2>Моя команда. Трансферы</h2>
         <!-- Панель туров -->
@@ -99,7 +103,6 @@
                         <option value="РБ Братислава">РБ Братислава</option>
                         <option value="РБ Тотем">РБ Тотем</option>
                         <option value="Колчестер">Колчестер</option>
-                        <!-- Добавь больше клубов -->
                     </select>
                     <select id="position-filter">
                         <option value="all">Все</option>
@@ -139,5 +142,5 @@
         </div>
     </div>
     <script src="script.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92e93cca0ab5b025',t:'MTc0NDM2MTQzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>

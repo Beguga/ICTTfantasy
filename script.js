@@ -19,7 +19,7 @@ const tours = [
 
 // Данные об игроках
 const playersData = [
-// Атлетико
+    // Атлетико
     { name: "Аврам Скверлин", position: "ВР", club: "Атлетико Горизонт", points: 0, price: 5, tourPoints: { 1: 0 } },
     { name: "Лоренцо Фрозин", position: "ВР", club: "Атлетико Горизонт", points: 0, price: 5, tourPoints: { 1: 0 } },
     { name: "Винстон Эрнандес", position: "ЗЩ", club: "Атлетико Горизонт", points: 0, price: 6, tourPoints: { 1: 0 } },
@@ -40,8 +40,8 @@ const playersData = [
     // Тюмень
     { name: "Павел Нориков", position: "ВР", club: "Тюмень", points: 0, price: 5, tourPoints: { 1: 0 } },
     { name: "Гвидас Нойзович", position: "ЗЩ", club: "Тюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
-    { name: "Феликс Хаззенберг", position: "ЗЩ", club: "АТюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
-    { name: "Алессандро МакРени ", position: "ЗЩ", club: "Тюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Феликс Хаззенберг", position: "ЗЩ", club: "Тюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Алессандро МакРени", position: "ЗЩ", club: "Тюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
     { name: "Либерато", position: "ЗЩ", club: "Тюмень", points: 0, price: 6, tourPoints: { 1: 0 } },
     { name: "Диего Гомес", position: "ПЗ", club: "Тюмень", points: 0, price: 7, tourPoints: { 1: 0 } },
     { name: "Бруно Муньос", position: "ПЗ", club: "Тюмень", points: 0, price: 7, tourPoints: { 1: 0 } },
@@ -53,7 +53,25 @@ const playersData = [
     { name: "Пабло Куенда", position: "НАП", club: "Тюмень", points: 0, price: 8, tourPoints: { 1: 0 } },
     { name: "Илья Мартышкин", position: "НАП", club: "Тюмень", points: 0, price: 8, tourPoints: { 1: 0 } },
     { name: "Ян Словацки", position: "НАП", club: "Тюмень", points: 0, price: 8, tourPoints: { 1: 0 } },
-
+    // Ритховен
+    { name: "Бруно Кёйперс", position: "ВР", club: "Ритховен", points: 0, price: 5, tourPoints: { 1: 0 } },
+    { name: "Лукаш Джошевич", position: "ВР", club: "Ритховен", points: 0, price: 5, tourPoints: { 1: 0 } },
+    { name: "Томми Нимери", position: "ЗЩ", club: "Ритховен", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Этхан Морено", position: "ЗЩ", club: "Ритховен", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Джейкоб Кумба", position: "ЗЩ", club: "Ритховен", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Максим Милошевич", position: "ЗЩ", club: "Ритховен", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Джереми Джеймс", position: "ЗЩ", club: "Ритховен", points: 0, price: 6, tourPoints: { 1: 0 } },
+    { name: "Стюарт Декстер-Драммонд", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Джейден Амасс", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Йелле Ван Дер Мер", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Энту Криси", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Яковлев Александр", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Эллиас Веннестра", position: "ПЗ", club: "Ритховен", points: 0, price: 7, tourPoints: { 1: 0 } },
+    { name: "Рио Нгема", position: "НАП", club: "Ритховен", points: 0, price: 8, tourPoints: { 1: 0 } },
+    { name: "Джек Крионель", position: "НАП", club: "Ритховен", points: 0, price: 8, tourPoints: { 1: 0 } },
+    { name: "Юлиан Пьере", position: "НАП", club: "Ритховен", points: 0, price: 8, tourPoints: { 1: 0 } },
+    { name: "Йерун Ван Дер Мерве", position: "НАП", club: "Ритховен", points: 0, price: 8, tourPoints: { 1: 0 } },
+    // Братислава
     { name: "Тимирбай Мансур", position: "НАП", club: "Атлетико Горизонт", points: 0, price: 8, tourPoints: { 1: 0 } },
     { name: "Ферсман Торрес", position: "НАП", club: "Атлетико Горизонт", points: 0, price: 8, tourPoints: { 1: 0 } },
     { name: "Анжело Герд", position: "ВР", club: "Сайрос", points: 0, price: 5, tourPoints: { 1: 1 } },
@@ -75,8 +93,23 @@ const playersData = [
     { name: "Картоввшка", position: "ПЗ", club: "РБ Тотем", points: 26, price: 1, tourPoints: { 1: 0 } },
 ];
 
-// Инициализация всех пользователей
-let allUsers = JSON.parse(localStorage.getItem("allUsers")) || [];
+// Инициализация Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyDCC5kFrmQE0LcpCphUPEGhS-7ct7TPLcc",
+    authDomain: "fantasy-leaderboard.firebaseapp.com",
+    databaseURL: "https://fantasy-leaderboard-default-rtdb.firebaseio.com",
+    projectId: "fantasy-leaderboard",
+    storageBucket: "fantasy-leaderboard.firebasestorage.app",
+    messagingSenderId: "330364892357",
+    appId: "1:330364892357:web:fa03c2775e3670ed796cac",
+    measurementId: "G-QSBW9LN1V9"
+};
+
+// Инициализируем Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Получаем ссылку на базу данных
+const database = firebase.database();
 
 // Данные пользователя
 let userData = JSON.parse(localStorage.getItem("userData")) || {
@@ -234,7 +267,7 @@ function getLastCompletedTour() {
     return completedTours.reduce((latest, tour) => tour.id > latest.id ? tour : latest, completedTours[0]);
 }
 
-// Функция для отображения таблицы лидеров
+// Функция для отображения таблицы лидеров (с использованием Firebase)
 function displayLeaderboard() {
     const overallTableBody = document.querySelector("#overall-leaderboard tbody");
     const lastTourTableBody = document.querySelector("#last-tour-leaderboard tbody");
@@ -242,34 +275,48 @@ function displayLeaderboard() {
     overallTableBody.innerHTML = "";
     lastTourTableBody.innerHTML = "";
 
-    const validUsers = allUsers.filter(user => user.nickname && user.nickname.trim() !== "");
-    const overallSorted = [...validUsers].sort((a, b) => b.totalPoints - a.totalPoints);
-    overallSorted.forEach((user, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${user.nickname}</td>
-            <td>${user.totalPoints}</td>
-        `;
-        overallTableBody.appendChild(row);
-    });
+    // Загружаем данные из Firebase
+    database.ref("users").once("value", snapshot => {
+        const usersData = snapshot.val();
+        const allUsersFirebase = usersData ? Object.values(usersData) : [];
 
-    const lastTour = getLastCompletedTour();
-    if (lastTour) {
-        const lastTourSorted = [...validUsers].sort((a, b) => (b.tourPoints[lastTour.id] || 0) - (a.tourPoints[lastTour.id] || 0));
-        lastTourSorted.forEach((user, index) => {
-            const points = user.tourPoints[lastTour.id] || 0;
+        // Фильтруем пользователей с валидными никами
+        const validUsers = allUsersFirebase.filter(user => user.nickname && user.nickname.trim() !== "");
+
+        // Общий рейтинг
+        const overallSorted = [...validUsers].sort((a, b) => b.totalPoints - a.totalPoints);
+        overallSorted.forEach((user, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${index + 1}</td>
                 <td>${user.nickname}</td>
-                <td>${points}</td>
+                <td>${user.totalPoints || 0}</td>
             `;
-            lastTourTableBody.appendChild(row);
+            overallTableBody.appendChild(row);
         });
-    } else {
-        lastTourTableBody.innerHTML = `<tr><td colspan="3">Нет завершённых туров</td></tr>`;
-    }
+
+        // Рейтинг за последний тур
+        const lastTour = getLastCompletedTour();
+        if (lastTour) {
+            const lastTourSorted = [...validUsers].sort((a, b) => (b.tourPoints?.[lastTour.id] || 0) - (a.tourPoints?.[lastTour.id] || 0));
+            lastTourSorted.forEach((user, index) => {
+                const points = user.tourPoints?.[lastTour.id] || 0;
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${user.nickname}</td>
+                    <td>${points}</td>
+                `;
+                lastTourTableBody.appendChild(row);
+            });
+        } else {
+            lastTourTableBody.innerHTML = `<tr><td colspan="3">Нет завершённых туров</td></tr>`;
+        }
+    }).catch(error => {
+        console.error("Ошибка при загрузке данных для таблицы лидеров:", error);
+        overallTableBody.innerHTML = `<tr><td colspan="3">Ошибка загрузки данных</td></tr>`;
+        lastTourTableBody.innerHTML = `<tr><td colspan="3">Ошибка загрузки данных</td></tr>`;
+    });
 }
 
 // Проверяем, является ли пользователь новичком
@@ -277,16 +324,28 @@ function isNewUser() {
     return !userData.hasSavedTeam;
 }
 
-// Сохраняем данные пользователя
+// Сохраняем данные пользователя (только в Firebase и localStorage)
 function saveUserData() {
     localStorage.setItem("userData", JSON.stringify(userData));
-    const existingUserIndex = allUsers.findIndex(user => user.nickname === userData.nickname);
-    if (existingUserIndex !== -1) {
-        allUsers[existingUserIndex] = userData;
-    } else {
-        allUsers.push(userData);
+
+    // Сохраняем данные пользователя в Firebase
+    if (userData.nickname && userData.nickname.trim() !== "") {
+        const userRef = database.ref("users/" + userData.nickname);
+        userRef.set({
+            nickname: userData.nickname,
+            favoriteClub: userData.favoriteClub,
+            totalPoints: userData.totalPoints || 0,
+            tourPoints: userData.tourPoints || {},
+            selectedPlayers: userData.selectedPlayers,
+            teamHistory: userData.teamHistory,
+            budget: userData.budget,
+            availableTransfers: userData.availableTransfers,
+            joinedTour: userData.joinedTour,
+            hasSavedTeam: userData.hasSavedTeam
+        }).catch(error => {
+            console.error("Ошибка при сохранении данных в Firebase:", error);
+        });
     }
-    localStorage.setItem("allUsers", JSON.stringify(allUsers));
 }
 
 // Основная логика
@@ -308,16 +367,21 @@ document.addEventListener("DOMContentLoaded", function() {
             const nickname = document.getElementById("nickname").value.trim();
             const favoriteClub = document.getElementById("favorite-club").value;
 
-            const existingUser = allUsers.find(user => user.nickname === nickname);
-            if (existingUser) {
-                alert("Пользователь с таким ником уже существует! Пожалуйста, выберите другой ник.");
-                return;
-            }
+            // Проверяем, существует ли пользователь в Firebase
+            database.ref("users/" + nickname).once("value", snapshot => {
+                if (snapshot.exists()) {
+                    alert("Пользователь с таким ником уже существует! Пожалуйста, выберите другой ник.");
+                    return;
+                }
 
-            userData.nickname = nickname;
-            userData.favoriteClub = favoriteClub;
-            saveUserData();
-            window.location.href = "team-selection.html";
+                userData.nickname = nickname;
+                userData.favoriteClub = favoriteClub;
+                saveUserData();
+                window.location.href = "team-selection.html";
+            }).catch(error => {
+                console.error("Ошибка при проверке ника в Firebase:", error);
+                alert("Произошла ошибка при проверке ника. Попробуйте снова.");
+            });
         });
     }
 
@@ -663,19 +727,31 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Сброс данных (V + T)
+    // Сброс данных (V + T) — полный сброс
     let isVPressed = false;
-    document.addEventListener("keydown", function(event) {
+    window.addEventListener("keydown", function(event) {
         if (event.key.toLowerCase() === "v") {
             isVPressed = true;
         }
         if (event.key.toLowerCase() === "t" && isVPressed) {
-            const originalNickname = userData.nickname;
-            const originalFavoriteClub = userData.favoriteClub;
+            // Сохраняем ник для удаления из Firebase
+            const nicknameToRemove = userData.nickname;
 
+            // Удаляем данные пользователя из Firebase
+            if (nicknameToRemove && nicknameToRemove.trim() !== "") {
+                database.ref("users/" + nicknameToRemove).remove()
+                    .then(() => {
+                        console.log("Данные пользователя удалены из Firebase");
+                    })
+                    .catch(error => {
+                        console.error("Ошибка при удалении данных из Firebase:", error);
+                    });
+            }
+
+            // Полностью сбрасываем userData
             userData = {
-                nickname: originalNickname,
-                favoriteClub: originalFavoriteClub,
+                nickname: "",
+                favoriteClub: "",
                 selectedPlayers: [],
                 teamHistory: {},
                 tourPoints: {},
@@ -685,35 +761,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 joinedTour: null,
                 hasSavedTeam: false
             };
+
+            // Сбрасываем переменные
             isTransferMode = false;
             pendingRemovals = 0;
+            budget = 100;
+
+            // Сохраняем сброшенные данные (это также обновит Firebase)
             saveUserData();
 
-            const slots = document.querySelectorAll(".player-slot");
-            slots.forEach(slot => {
-                slot.classList.remove("filled");
-                slot.innerHTML = "";
-                slot.dataset.player = "";
-            });
+            // Очищаем localStorage
+            localStorage.removeItem("userData");
 
-            budget = 100;
-            budgetDisplay.textContent = budget;
+            // Перенаправляем на fantasy.html, чтобы пользователь мог заново ввести ник и клуб
+            window.location.href = "fantasy.html";
 
-            const transfersDiv = document.querySelector(".transfers");
-            transfersDiv.innerHTML = `<span>Соберите и сохраните состав</span>`;
-
-            setJoinedTour();
-            selectedTourId = getCurrentTour().id;
-
-            renderTourButtons();
-            renderPlayers();
-            displayTourPoints(selectedTourId);
-
-            alert("Состав и данные сброшены! Ник и клуб остались прежними.");
+            // Уведомляем пользователя
+            alert("Все данные сброшены! Вы будете перенаправлены на страницу регистрации.");
         }
     });
 
-    document.addEventListener("keyup", function(event) {
+    window.addEventListener("keyup", function(event) {
         if (event.key.toLowerCase() === "v") {
             isVPressed = false;
         }
