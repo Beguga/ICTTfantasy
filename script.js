@@ -197,7 +197,7 @@ const playersData = [
   { name: "Накатика Явъебука", position: "ЗЩ", club: "Гладиатор", points: 0, price: 4, tourPoints: { 1: 0 } },
   { name: "Евгений Джикия", position: "ЗЩ", club: "Гладиатор", points: 0, price: 4, tourPoints: { 1: 0, 2: 0 } },
   { name: "Антон Чернов", position: "ЗЩ", club: "Гладиатор", points: 0, price: 4, tourPoints: { 1: 0 } },
-  { name: "Иван Резок", position: "ПЗ", club: "Гладиатор", points: 0, price: 5, tourPoints: { 1: 0 } },
+  { name: "Иван Резок", position: "НАП", club: "Гладиатор", points: 0, price: 5, tourPoints: { 1: 0 } },
   { name: "Марти Перейра", position: "ПЗ", club: "Гладиатор", points: 0, price: 5, tourPoints: { 1: 0 } },
   { name: "Дмитрий Игнатов", position: "ПЗ", club: "Гладиатор", points: 0, price: 5, tourPoints: { 1: 0 } },
   { name: "Данила Пруцев", position: "ПЗ", club: "Гладиатор", points: 0, price: 5, tourPoints: { 1: 0 } },
@@ -508,7 +508,6 @@ function getLastCompletedTour() {
 }
 
 // Функция для отображения таблицы лидеров (с использованием Firebase)
-// Функция для отображения таблицы лидеров (с использованием Firebase)
 async function displayLeaderboard() {
     const leaderboardTableBody = document.querySelector("#leaderboard-table tbody");
     const personalRankContainer = document.querySelector("#personal-rank") || document.createElement("div");
@@ -523,7 +522,14 @@ async function displayLeaderboard() {
     personalRankContainer.innerHTML = "<p>Загрузка вашего места...</p>";
 
     try {
-        // Загружаем данные из Firebase по пути /leaderboard
+        // Проверяем, есть ли ник пользователя
+        if (!userData.nickname) {
+            leaderboardTableBody.innerHTML = `<tr><td colspan="4">Ошибка: Ник не указан</td></tr>`;
+            personalRankContainer.innerHTML = `<p>Ошибка: Ник не указан</p>`;
+            return;
+        }
+
+        // Загружаем данные из Firebase
         const snapshot = await database.ref("leaderboard").once("value");
         const leaderboardData = [];
         snapshot.forEach(childSnapshot => {
@@ -554,32 +560,30 @@ async function displayLeaderboard() {
             });
 
             // Находим место текущего пользователя
-            const currentUser = leaderboardData.find(entry => entry.nickname === userData.nickname);
-            if (currentUser) {
-                const userIndex = leaderboardData.findIndex(entry => entry.nickname === userData.nickname) + 1;
+            const userIndex = leaderboardData.findIndex(entry => entry.nickname === userData.nickname);
+            if (userIndex !== -1) {
+                const currentUser = leaderboardData[userIndex];
                 personalRankContainer.innerHTML = `
-                    <table>
-                        <tr>
-                            <td>${userIndex}</td>
-                            <td>${currentUser.nickname}</td>
-                            <td>${currentUser.score}</td>
-                            <td>${currentUser.favoriteClub}</td>
-                        </tr>
-                    </table>
+                    <div class="personal-rank-row">
+                        <span>${userIndex + 1}</span>
+                        <span>${currentUser.nickname}</span>
+                        <span>${currentUser.score}</span>
+                        <span>${currentUser.favoriteClub}</span>
+                    </div>
                 `;
             } else {
                 personalRankContainer.innerHTML = `<p>Ваш ник "${userData.nickname}" не найден в таблице лидеров.</p>`;
             }
         }
 
-        // Добавляем personalRankContainer в DOM, если его там ещё нет
+        // Добавляем personalRankContainer в DOM, если его ещё нет
         if (!document.querySelector("#personal-rank")) {
             document.querySelector("#leaderboard-content").appendChild(personalRankContainer);
         }
     } catch (error) {
-        console.error("Ошибка при загрузке данных для таблицы лидеров:", error);
-        leaderboardTableBody.innerHTML = `<tr><td colspan="4">Ошибка загрузки данных</td></tr>`;
-        personalRankContainer.innerHTML = `<p>Ошибка загрузки вашего места</p>`;
+        console.error("Ошибка при загрузке таблицы лидеров:", error);
+        leaderboardTableBody.innerHTML = `<tr><td colspan="4">Ошибка загрузки</td></tr>`;
+        personalRankContainer.innerHTML = `<p>Ошибка загрузки</p>`;
     }
 }
 
