@@ -9,7 +9,7 @@ function toggleInfo(contentId) {
 
 // Данные о турах
 const tours = [
-    { id: 1, status: "completed", deadline: "2025-03-16T23:59:00" },
+    { id: 1, status: "completed", deadline: "2025-04-16T22:40:00" },
     { id: 2, status: "upcoming", deadline: "2025-04-24T23:59:00" },
     { id: 3, status: "upcoming", deadline: "2025-04-30T23:59:00" },
     { id: 4, status: "upcoming", deadline: "2025-05-07T23:59:00" },
