@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +12,43 @@
     <link href="https://fonts.cdnfonts.com/css/neue-machina" rel="stylesheet">
 </head>
 <body class="team-selection-page">
-    <!-- Кнопка для таблицы лидеров -->
-    <button id="leaderboard-button">Таблица лидеров</button>
-
-    <!-- Модальное окно для таблицы лидеров -->
-    <div id="leaderboard-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-leaderboard" class="close">×</span>
-            <h2>Таблица лидеров</h2>
-            <div id="leaderboard-content">
-                <h3>Общий счёт</h3>
-                <table id="overall-leaderboard">
-                    <thead>
-                        <tr>
-                            <th>Место</th>
-                            <th>Никнейм</th>
-                            <th>Очки</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <h3>За последний тур</h3>
-                <table id="last-tour-leaderboard">
-                    <thead>
-                        <tr>
-                            <th>Место</th>
-                            <th>Никнейм</th>
-                            <th>Очки</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-    </div>
     <div class="team-selection-container">
         <h2>Моя команда. Трансферы</h2>
+
+        <!-- Кнопка для таблицы лидеров -->
+        <button id="leaderboard-button">Таблица лидеров</button>
+
+        <!-- Модальное окно для таблицы лидеров -->
+        <!-- Модальное окно для таблицы лидеров -->
+<div id="leaderboard-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-leaderboard" class="close">×</span>
+        <h2>Таблица лидеров</h2>
+        <div id="leaderboard-content">
+            <h3>Общий рейтинг</h3>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Место</th>
+                        <th>Ник</th>
+                        <th>Очки</th>
+                        <th>Клуб</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="personal-rank"></div> <!-- Добавляем контейнер для личного места -->
+        </div>
+    </div>
+</div>
+
         <!-- Панель туров -->
         <div class="tour-selection">
             <div id="tour-buttons"></div>
         </div>
-        <div class="team-selection-content">
-            <!-- Левая часть: поле с ячейками -->
+
+        <!-- Поле с кругами (состав) -->
+        <div class="field-container">
             <div class="field">
                 <div class="goalkeepers">
                     <div class="player-slot" data-position="ВР"></div>
@@ -79,8 +74,10 @@
                     <div class="player-slot" data-position="НАП"></div>
                 </div>
             </div>
+        </div>
 
-            <!-- Правая часть: список игроков -->
+        <!-- Список игроков -->
+        <div class="player-list-container">
             <div class="player-list">
                 <div class="filters">
                     <select id="club-filter">
@@ -136,8 +133,15 @@
                 </div>
             </div>
         </div>
-        <div class="budget">
-            <span>Бюджет: <span id="budget">100</span></span>
+
+        <!-- Бюджет, очки и кнопка "Сохранить" -->
+        <div class="footer-section">
+            <div class="budget">
+                <span>Бюджет: <span id="budget">100</span></span>
+            </div>
+            <div class="tour-points">
+                <!-- Очки будут добавлены через JavaScript -->
+            </div>
             <button class="save-button">Сохранить</button>
         </div>
     </div>

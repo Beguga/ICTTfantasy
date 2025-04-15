@@ -1,9 +1,24 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fantasyButton = document.getElementById("fantasy-button");
+            fantasyButton.addEventListener("click", function(event) {
+                const userDataStored = localStorage.getItem("userData");
+                if (userDataStored) {
+                    const parsedUserData = JSON.parse(userDataStored);
+                    if (parsedUserData.nickname && parsedUserData.nickname.trim() !== "") {
+                        event.preventDefault(); // Предотвращаем переход на fantasy.html
+                        window.location.href = "team-selection.html";
+                    }
+                }
+            });
+        });
+    </script>
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

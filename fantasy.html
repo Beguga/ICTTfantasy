@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy - ICTT League Fantasy</title>
@@ -14,38 +14,40 @@
 <body class="fantasy-page">
     <div class="fantasy-container">
         <h2>Введите данные</h2>
-        <form id="user-form">
-            <label for="nickname">Ник</label>
-            <input type="text" id="nickname" name="nickname" placeholder="Введите ваш ник" required>
+        <form id="user-form" class="user-form-mobile">
+            <div class="form-group">
+                <label for="nickname">Ник</label>
+                <input type="text" id="nickname" name="nickname" placeholder="Введите ваш ник" required>
+            </div>
             
-            <label for="favorite-club">Любимый клуб</label>
-            <select id="favorite-club" name="favorite-club" required>
-                <option value="" disabled selected>Выберите клуб</option>
-                <option value="Сайрос">Сайрос</option>
-                <option value="Манреса">Манреса</option>
-                <option value="Ритховен">Ритховен</option>
-                <option value="Уралан">Уралан</option>
-                <option value="Мелитополь">Мелитополь</option>
-                <option value="Кобресаль">Кобресаль</option>
-                <option value="Тюмень">Тюмень</option>
-                <option value="Атлетико Горизонт">Атлетико Горизонт</option>
-                <option value="Гладиатор">Гладиатор</option>
-                <option value="Флорида">Флорида</option>
-                <option value="Металлург">Металлург</option>
-                <option value="Лас Фьеро">Лас Фьеро</option>
-                <option value="Капро">Капро</option>
-                <option value="Фьорд">Фьорд</option>
-                <option value="Джумейра">Джумейра</option>
-                <option value="РБ Братислава">РБ Братислава</option>
-                <option value="РБ Тотем">РБ Тотем</option>
-                <option value="Колчестер">Колчестер</option>
-            </select>
+            <div class="form-group">
+                <label for="favorite-club">Любимый клуб</label>
+                <select id="favorite-club" name="favorite-club" required>
+                    <option value="" disabled selected>Выберите клуб</option>
+                    <option value="Сайрос">Сайрос</option>
+                    <option value="Манреса">Манреса</option>
+                    <option value="Ритховен">Ритховен</option>
+                    <option value="Уралан">Уралан</option>
+                    <option value="Мелитополь">Мелитополь</option>
+                    <option value="Кобресаль">Кобресаль</option>
+                    <option value="Тюмень">Тюмень</option>
+                    <option value="Атлетико Горизонт">Атлетико Горизонт</option>
+                    <option value="Гладиатор">Гладиатор</option>
+                    <option value="Флорида">Флорида</option>
+                    <option value="Металлург">Металлург</option>
+                    <option value="Лас Фьеро">Лас Фьеро</option>
+                    <option value="Капро">Капро</option>
+                    <option value="Фьорд">Фьорд</option>
+                    <option value="Джумейра">Джумейра</option>
+                    <option value="РБ Братислава">РБ Братислава</option>
+                    <option value="РБ Тотем">РБ Тотем</option>
+                    <option value="Колчестер">Колчестер</option>
+                </select>
+            </div>
             
             <button type="submit" class="next-button">Далее</button>
         </form>
     </div>
     <script src="script.js"></script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92fb8a737e6cc5aa',t:'MTc0NDU1MzM2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9303261dda25ed8b',t:'MTc0NDYzMzEzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading' !==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'930c54439b54afa2',t:'MTc0NDcyOTQwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

@@ -28,65 +28,194 @@ body.fantasy-page {
 }
 
 /* Контейнер для страницы Fantasy */
+/* Контейнер для страницы Fantasy */
+/* Улучшение стилей для fantasy-container */
 .fantasy-container {
-    padding: 40px;
+    padding: 20px; /* Уменьшим отступы для мобильных */
     text-align: center;
     min-height: 100vh;
     box-sizing: border-box;
-    position: absolute; /* Добавляем позиционирование */
-    top: 10%; /* Смещаем по Y */
-    left: 20%; /* Смещаем по X */
-    transform: translateX(-50%); /* Центрируем по X относительно left */
+    position: relative; /* Убираем absolute для мобильных */
+    top: 0;
+    left: 0;
+    transform: none; /* Убираем трансформацию */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center;
 }
 
-.fantasy-container h2 {
-    font-size: 2em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-/* Стили для формы */
+/* Улучшение стилей для формы */
 #user-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 450px;
+    width: 100%; /* Форма на всю ширину */
+    max-width: 450px; /* Ограничим максимальную ширину */
+    padding: 0 10px; /* Добавим боковые отступы */
+    box-sizing: border-box;
 }
 
+/* Стили для групп полей */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Улучшение стилей для меток */
 #user-form label {
     font-size: 1.2em;
     text-align: left;
+    color: white;
 }
 
+/* Улучшение стилей для полей ввода и селекта */
 #user-form input,
 #user-form select {
-    padding: 10px;
+    padding: 12px; /* Увеличим padding для удобства касания */
     font-size: 1em;
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.1);
-    color: white; /* Цвет текста для input остаётся белым */
+    color: white;
     font-family: 'Neue Machina', sans-serif;
     font-weight: 700;
+    width: 100%; /* Поля на всю ширину формы */
+    box-sizing: border-box;
+    border-radius: 5px; /* Скруглим углы */
 }
 
+/* Улучшение стиля селекта */
 #user-form select {
     appearance: none;
     background: rgba(255, 255, 255, 0.1) url('images/arrow-down.png') no-repeat right 10px center;
     background-size: 20px;
-    color: black; /* Переопределяем цвет текста для select */
+    color: white; /* Исправим цвет текста на белый для видимости */
+    padding-right: 40px; /* Учтем место для стрелки */
 }
 
-/* Кнопка "Далее" как спрайт */
+/* Исправление цвета опций (не работает напрямую через CSS, нужно через JS или другие методы) */
+#user-form select option {
+    color: black;
+    background: white;
+}
+
+/* Кнопка "Далее" */
 .next-button {
-    width: 300px; /* Увеличиваем ширину */
-    height: 90px; /* Высота остаётся прежней */
-    background: url('images/button-sprite.png') no-repeat 0 0;
-    background-size: 225px 45px; /* Обновляем размер спрайта: ширина 250px, высота 100px (2 состояния) */
+    width: 100%; /* Кнопка на всю ширину */
+    max-width: 300px; /* Ограничим максимальную ширину */
+    height: 60px; /* Уменьшим высоту для мобильных */
+    background: url('images/button-sprite.png') no-repeat center center;
+    background-size: contain; /* Убедимся, что спрайт масштабируется корректно */
     border: none;
     cursor: pointer;
     text-indent: -9999px;
+    min-height: 44px; /* Минимальная высота для касаний */
+    margin: 0 auto; /* Центрируем кнопку */
 }
 
+/* Медиа-запросы для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .fantasy-container {
+        padding: 15px;
+        justify-content: flex-start; /* Начинаем сверху на мобильных */
+        padding-top: 20%; /* Отступ сверху для видимости */
+    }
+
+    .fantasy-container h2 {
+        font-size: 1.5em; /* Уменьшим заголовок */
+        margin-bottom: 20px;
+    }
+
+    #user-form {
+        padding: 0 5px; /* Уменьшим боковые отступы */
+    }
+
+    #user-form label {
+        font-size: 1em; /* Уменьшим размер шрифта меток */
+    }
+
+    #user-form input,
+    #user-form select {
+        padding: 10px;
+        font-size: 0.9em; /* Уменьшим шрифт для полей */
+    }
+
+    .next-button {
+        height: 50px; /* Еще уменьшим высоту кнопки */
+        max-width: 200px; /* Уменьшим ширину кнопки */
+        background-size: contain;
+    }
+}
+
+/* Для совсем маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .fantasy-container h2 {
+        font-size: 1.2em;
+    }
+
+    #user-form label {
+        font-size: 0.9em;
+    }
+
+    #user-form input,
+    #user-form select {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .next-button {
+        max-width: 180px;
+        height: 45px;
+    }
+}
+
+/* Медиа-запросы для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    /* Общие настройки */
+    body {
+        font-size: 14px;
+    }
+
+    /* Страница Fantasy (fantasy.html) */
+    .fantasy-container {
+        padding: 20px;
+        top: 5%; /* Уменьшаем отступ сверху */
+        max-width: 100%; /* Убираем ограничение ширины */
+    }
+
+    .fantasy-container h2 {
+        font-size: 1.5em; /* Уменьшаем размер заголовка */
+        margin-bottom: 15px;
+    }
+
+    #user-form {
+        width: 100%; /* Форма занимает всю ширину */
+        max-width: 320px; /* Ограничиваем максимальную ширину формы */
+        gap: 10px; /* Уменьшаем промежутки между элементами */
+    }
+
+    #user-form label {
+        font-size: 1em; /* Уменьшаем размер текста меток */
+    }
+
+    #user-form input,
+    #user-form select {
+        padding: 8px; /* Уменьшаем внутренние отступы */
+        font-size: 0.9em; /* Уменьшаем размер шрифта */
+    }
+
+    #user-form select {
+        background-size: 16px; /* Уменьшаем размер стрелки */
+        background-position: right 8px center; /* Корректируем позицию стрелки */
+    }
+
+    .next-button {
+        width: 200px; /* Уменьшаем размер кнопки */
+        height: 60px;
+        background-size: 150px 30px; /* Уменьшаем размер спрайта */
+    }
+}
 
 /* Стили для страницы Info */
 .info-container {
@@ -196,7 +325,6 @@ a {
     text-decoration: none;
 }
 
-
 /* Фон для страницы Team Selection */
 body.team-selection-page {
     background: url('images/background-team-selection.png') no-repeat center center;
@@ -208,27 +336,80 @@ body.team-selection-page {
     padding: 40px;
     min-height: 100vh;
     box-sizing: border-box;
-    color: white; /* Текст по умолчанию белый */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .team-selection-container h2 {
     font-size: 2em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
-/* Основной контент: поле и список игроков */
-.team-selection-content {
+/* Кнопка "Таблица лидеров" */
+#leaderboard-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-end;
+}
+
+#leaderboard-button:hover {
+    background-color: #45a049;
+}
+
+/* Панель туров */
+.tour-selection {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tour-button {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.tour-button.active {
+    background: rgba(0, 255, 0, 0.3);
+}
+
+.tour-button.completed {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+.tour-button:hover:not(.active):not(.completed) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Контейнер для поля */
+.field-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* Поле */
 .field {
-    flex: 1;
     background: url('images/field.png') no-repeat center center;
     background-size: contain;
     height: 500px;
+    width: 100%;
+    max-width: 600px;
     position: relative;
 }
 
@@ -236,8 +417,11 @@ body.team-selection-page {
 .goalkeepers, .defenders, .midfielders, .forwards {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     position: absolute;
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .goalkeepers { top: 10%; }
@@ -259,6 +443,7 @@ body.team-selection-page {
     text-align: center;
     cursor: pointer;
     position: relative;
+    flex-shrink: 0;
 }
 
 .player-slot.filled {
@@ -280,20 +465,27 @@ body.team-selection-page {
     font-size: 0.8em;
 }
 
+/* Контейнер для списка игроков */
+.player-list-container {
+    width: 100%;
+}
+
 /* Список игроков */
 .player-list {
-    flex: 1;
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     max-height: 600px;
     overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .filters {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .filters select {
@@ -302,11 +494,11 @@ body.team-selection-page {
     font-weight: 700;
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid white;
-    /* Убрали color: black, чтобы текст наследовал белый цвет от .team-selection-container */
+    color: white;
 }
 
 .filters select option {
-    color: black; /* Текст в опциях остаётся чёрным */
+    color: black;
 }
 
 /* Заголовок столбцов */
@@ -319,8 +511,10 @@ body.team-selection-page {
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
+    color: white;
 }
 
+/* Список игроков */
 .players {
     display: flex;
     flex-direction: column;
@@ -337,6 +531,7 @@ body.team-selection-page {
     cursor: pointer;
     text-align: center;
     align-items: center;
+    color: white;
 }
 
 .player:hover {
@@ -387,87 +582,42 @@ body.team-selection-page {
     cursor: not-allowed;
 }
 
-/* Бюджет и кнопка "Сохранить" */
-.budget {
-    margin-top: 20px;
+/* Нижняя секция: бюджет, очки, кнопка "Сохранить" */
+.footer-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
 }
 
+.budget {
+    font-size: 1.2em;
+}
+
+.tour-points {
+    font-size: 1.2em;
+}
+
 .save-button {
-
-
-    width: 300px; /* Увеличиваем ширину */
-    height: 90px; /* Высота остаётся прежней */
+    width: 300px;
+    height: 90px;
     background: url('images/save-button.png') no-repeat center center;
-    background-size: 225px 45px; /* Обновляем размер спрайта: ширина 250px, высота 100px (2 состояния) */
+    background-size: 225px 45px;
     border: none;
     cursor: pointer;
     text-indent: -9999px;
-}
-/* Очки за тур */
-.tour-points {
-    margin-top: 20px;
-    font-size: 1.2em;
 }
 
 /* Доступные замены */
 .transfers {
     font-size: 1.2em;
 }
-/* Стили для панели туров */
-.tour-selection {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
 
-.tour-button {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Neue Machina', sans-serif;
-    font-weight: 700;
-    transition: background 0.3s ease;
-}
-
-.tour-button.active {
-    background: rgba(0, 255, 0, 0.3); /* Подсвечиваем активный тур */
-}
-
-.tour-button.completed {
-    background: rgba(255, 0, 0, 0.3); /* Завершённые туры */
-}
-
-.tour-button:hover:not(.active):not(.completed) {
-    background: rgba(255, 255, 255, 0.2);
-}
-#leaderboard-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#leaderboard-button:hover {
-    background-color: #45a049;
-}
-
+/* Стили для модального окна */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -483,16 +633,12 @@ body.team-selection-page {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
-    color: #333 !important;
+    color: #333;
 }
 
-.modal-content h2 {
-    color: #333 !important;
+.modal-content h2, .modal-content h3 {
+    color: #333;
     margin-bottom: 20px;
-}
-
-.modal-content h3 {
-    color: #333 !important;
 }
 
 .close {
@@ -507,15 +653,6 @@ body.team-selection-page {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-#leaderboard-content {
-    margin-top: 20px;
-}
-
-#leaderboard-content h3 {
-    color: #333 !important;
-    margin-bottom: 10px;
 }
 
 table {
@@ -539,4 +676,248 @@ th {
 td {
     background-color: #ffffff;
     color: #333;
+}
+
+/* Стили для десктопов (ширина экрана больше 768px) */
+@media (min-width: 769px) {
+    .team-selection-container {
+        padding: 40px;
+    }
+
+    .team-selection-content {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+    }
+
+    .field-container {
+        flex: 1;
+    }
+
+    .player-list-container {
+        flex: 1;
+    }
+
+    .field {
+        height: 500px;
+        max-width: 600px;
+    }
+
+    .player-slot {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8em;
+    }
+
+    .remove-player {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8em;
+    }
+
+    .player-list {
+        max-height: 600px;
+    }
+
+    .budget {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
+
+/* Медиа-запросы для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .team-selection-container {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .team-selection-container h2 {
+        font-size: 1.5em;
+        display: block;
+    }
+
+    #leaderboard-button {
+        align-self: center;
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .tour-selection {
+        gap: 5px;
+    }
+
+    .tour-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .field-container {
+        width: 100%;
+    }
+
+    .field {
+        height: 400px;
+        width: 100%;
+        max-width: 400px;
+        background-size: contain;
+    }
+
+    .goalkeepers, .defenders, .midfielders, .forwards {
+        justify-content: space-around;
+        gap: 5px;
+        padding: 0 5px;
+    }
+
+    .goalkeepers { top: 5%; }
+    .defenders { top: 25%; }
+    .midfielders { top: 50%; }
+    .forwards { top: 75%; }
+
+    .player-slot {
+        width: 45px;
+        height: 45px;
+        font-size: 0.6em;
+        border-width: 1px;
+    }
+
+    .remove-player {
+        width: 16px;
+        height: 16px;
+        font-size: 0.6em;
+        top: -6px;
+        right: -6px;
+    }
+
+    .player-list {
+        padding: 15px;
+        max-height: 400px;
+    }
+
+    .filters select {
+        padding: 8px;
+        font-size: 0.9em;
+        width: 48%;
+        box-sizing: border-box;
+    }
+
+    .filters select:nth-child(3) {
+        width: 100%;
+    }
+
+    .player-header {
+        grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+        gap: 5px;
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .player {
+        grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+        gap: 5px;
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .add-player {
+        width: 25px;
+        height: 25px;
+        font-size: 1em;
+    }
+
+    .pagination {
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    .pagination button {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+
+    .footer-section {
+        gap: 10px;
+    }
+
+    .budget, .tour-points, .transfers {
+        font-size: 1em;
+    }
+
+    .save-button {
+        width: 200px;
+        height: 60px;
+        background-size: 150px 30px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content h3 {
+        font-size: 1.2em;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+#personal-rank {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+#personal-rank table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#personal-rank th,
+#personal-rank td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+#personal-rank tr {
+    background-color: #e6f3e6; /* Лёгкий зелёный фон для выделения личной строки */
+}
+
+#personal-rank p {
+    color: #333;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    #personal-rank {
+        margin-top: 15px;
+        padding: 8px;
+    }
+
+    #personal-rank th,
+    #personal-rank td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    #personal-rank p {
+        font-size: 0.9em;
+    }
 }
