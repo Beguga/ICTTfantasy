@@ -18,7 +18,7 @@ function updatePlayerPoints() {
 const tours = [
     { id: 1, status: "completed", deadline: "2025-03-16T23:59:00" },
     { id: 2, status: "active", deadline: "2025-03-24T23:59:00" },
-    { id: 3, status: "upcoming", deadline: "2025-04-30T23:59:00" },
+    { id: 3, status: "active", deadline: "2025-04-30T23:59:00" },
     { id: 4, status: "upcoming", deadline: "2025-05-07T23:59:00" },
     { id: 5, status: "upcoming", deadline: "2025-05-14T23:59:00" },
     { id: 6, status: "upcoming", deadline: "2025-05-21T23:59:00" },
