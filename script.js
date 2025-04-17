@@ -6,6 +6,13 @@ function toggleInfo(contentId) {
     content.classList.toggle("active");
     arrow.classList.toggle("active");
 }
+// Функция для обновления общего количества очков игроков на основе tourPoints
+function updatePlayerPoints() {
+    playersData.forEach(player => {
+        const tourPoints = Object.values(player.tourPoints || {});
+        player.points = tourPoints.reduce((sum, points) => sum + points, 0);
+    });
+}
 
 // Данные о турах
 const tours = [
@@ -125,7 +132,7 @@ const playersData = [
     { name: "Райо Гайоли", position: "ПЗ", club: "Лас Фьеро", points: 5, price: 6, tourPoints: { 1: 5 } },
     { name: "Альфонсо Мартин", position: "ПЗ", club: "Лас Фьеро", points: 0, price: 6, tourPoints: { 1: 0 } },
     { name: "Амир Ахметзянов", position: "НАП", club: "Лас Фьеро", points: 1, price: 7, tourPoints: { 1: 1 } },
-    { name: "Маркус Джордж", position: "НАП", club: "Лас Фьеро", points: 9, price: 7, tourPoints: { 1: 9 } },
+    { name: "Маркус Джордж", position: "НАП", club: "Лас Фьеро", points: 9, price: 7, tourPoints: { 1: 9, 2: 8 } },
     { name: "Артём Агаларов", position: "НАП", club: "Лас Фьеро", points: 4, price: 7, tourPoints: { 1: 4 } },
     { name: "Джастин Ханимбер", position: "НАП", club: "Лас Фьеро", points: 1, price: 7, tourPoints: { 1: 1 } },
     { name: "Иньяки Реми", position: "НАП", club: "Лас Фьеро", points: 4, price: 7, tourPoints: { 1: 4 } },
@@ -624,6 +631,7 @@ async function saveUserData() {
 
 // Основная логика
 document.addEventListener("DOMContentLoaded", function() {
+    updatePlayerPoints();
     // Проверка, запущен ли сайт через локальный сервер
     if (window.location.protocol === "file:") {
         console.warn("ВНИМАНИЕ: Сайт запущен через file:// протокол. Firebase требует http:// или https://. Запустите сайт через локальный сервер (например, Live Server в VS Code или python -m http.server).");
