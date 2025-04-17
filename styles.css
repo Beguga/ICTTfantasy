@@ -437,7 +437,6 @@ body.team-selection-page {
     border: 2px solid white;
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 0.8em;
@@ -445,7 +444,6 @@ body.team-selection-page {
     cursor: pointer;
     position: relative;
     flex-shrink: 0;
-    padding-top: 10px; /* Добавляем отступ для имени */
 }
 
 .player-slot.filled {
